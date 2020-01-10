@@ -10,7 +10,6 @@ const Home = () => {
         <View style = {styles.statusBar}>
           <StatusBar translucent backgroundColor={'#fff'}/>
         </View>
-        <Text>Home page</Text>
     </View>
   )
 }
