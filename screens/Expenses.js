@@ -1,19 +1,24 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 
-export const Home = () => {
+export const Expenses = () => {
   return (
     <View style = {styles.container}>
-      <Text> Expenses page </Tesx>
+      <Text> Expenses page </Text>
     </View>
   )
 }
 
-const style = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: #fff,
-    alignItems: center,
-    justifyContent: center
+    padding: 16,
+    borderRadius: 8,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  statusBar: {
+    backgroundColor: 'green',
   }
-})
+});
+
+export default Expenses

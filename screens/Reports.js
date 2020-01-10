@@ -9,13 +9,16 @@ const Reports = () => {
   )
 }
 
-const style = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: "center",
-    justifyContent: "center"
+    padding: 16,
+    borderRadius: 8,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  statusBar: {
+    backgroundColor: 'green',
   }
-})
+});
 
 export default Reports;

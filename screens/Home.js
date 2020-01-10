@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, StyleSheet, SafeAreaView, Text, FlatList } from 'react-native'
+import { View, StyleSheet, SafeAreaView, Text, FlatList, StatusBar } from 'react-native'
 import { ListItem, Button, Icon } from 'react-native-elements'
 import Constants from 'expo-constants';
 
@@ -7,6 +7,9 @@ const Home = () => {
 
   return (
     <View style = {styles.container}>
+        <View style = {styles.statusBar}>
+          <StatusBar translucent backgroundColor={'#fff'}/>
+        </View>
         <Text>Home page</Text>
     </View>
   )
@@ -19,6 +22,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  statusBar: {
+    backgroundColor: 'green',
+  }
 });
 
 export default Home;

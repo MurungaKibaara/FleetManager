@@ -67,19 +67,11 @@ class Signup extends Component {
     }
 }
 
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//     alignItems: "center",
-//     justifyContent: "center"
-//   }
-// })
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#003f5c',
+    backgroundColor: '#519468',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -92,13 +84,13 @@ const styles = StyleSheet.create({
  logo:{
        fontWeight:"bold",
        fontSize:45,
-       color:"#fb5b5a",
+       color:"white",
        marginBottom:40
    },
 
    inputView:{
        width:"80%",
-       backgroundColor:"#465881",
+       backgroundColor:"white",
        borderRadius:25,
        height:50,
        marginBottom:20,
@@ -108,7 +100,7 @@ const styles = StyleSheet.create({
 
      inputText:{
         height:50,
-        color:"white"
+        color:"black"
     },
 
     forgot:{
@@ -118,7 +110,7 @@ const styles = StyleSheet.create({
   },
     loginBtn:{
       width:"80%",
-      backgroundColor:"#fb5b5a",
+      backgroundColor:"green",
       borderRadius:25,
       height:50,
       alignItems:"center",
@@ -130,5 +122,60 @@ const styles = StyleSheet.create({
      color:"white"
  }
 })
+
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     backgroundColor: '#003f5c',
+//     alignItems: 'center',
+//     justifyContent: 'center',
+//   },
+//
+//   backgroundImage:{
+//    width:320,
+//    height:480,
+//  },
+//
+//  logo:{
+//        fontWeight:"bold",
+//        fontSize:45,
+//        color:"#fb5b5a",
+//        marginBottom:40
+//    },
+//
+//    inputView:{
+//        width:"80%",
+//        backgroundColor:"#465881",
+//        borderRadius:25,
+//        height:50,
+//        marginBottom:20,
+//        justifyContent:"center",
+//        padding:20
+//    },
+//
+//      inputText:{
+//         height:50,
+//         color:"white"
+//     },
+//
+//     forgot:{
+//       color:"white",
+//       fontSize:11,
+//       paddingBottom: 15,
+//   },
+//     loginBtn:{
+//       width:"80%",
+//       backgroundColor:"#fb5b5a",
+//       borderRadius:25,
+//       height:50,
+//       alignItems:"center",
+//       justifyContent:"center",
+//       marginTop:40,
+//       marginBottom:10
+//     },
+//     loginText:{
+//      color:"white"
+//  }
+// })
 
 export default Signup;

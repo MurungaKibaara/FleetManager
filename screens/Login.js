@@ -93,7 +93,7 @@ class Login extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#003f5c',
+    backgroundColor: '#519468',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -106,13 +106,13 @@ const styles = StyleSheet.create({
  logo:{
        fontWeight:"bold",
        fontSize:45,
-       color:"#fb5b5a",
+       color:"white",
        marginBottom:40
    },
 
    inputView:{
        width:"80%",
-       backgroundColor:"#465881",
+       backgroundColor:"white",
        borderRadius:25,
        height:50,
        marginBottom:20,
@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
 
      inputText:{
         height:50,
-        color:"white"
+        color:"black"
     },
 
     forgot:{
@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
   },
     loginBtn:{
       width:"80%",
-      backgroundColor:"#fb5b5a",
+      backgroundColor:"green",
       borderRadius:25,
       height:50,
       alignItems:"center",
