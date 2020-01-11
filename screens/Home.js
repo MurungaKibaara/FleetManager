@@ -22,7 +22,7 @@ const Home = () => {
                   imageSrc={require('../images/Banner.png')}
                   imageContainerStyle={styles.imageContainer}
                   activeOpacity={0.9}
-                  title={'Fleetr'}
+                  title={'fleetio.'}
                   titleStyle={styles.title}
                   caption={capt}
                   captionStyle={styles.caption}
@@ -36,7 +36,7 @@ const Home = () => {
                   <TouchableOpacity>
                     <Card>
                       <CardItem style={styles.cardItem}>
-                      <Image style={styles.image} source={require('../images/expenses.webp')} />
+                      <Image style={styles.image} source={require('../images/expenses2.jpg')} />
                         <Body style={styles.cardBody}>
                           <Text style={styles.text}>
 
@@ -49,10 +49,10 @@ const Home = () => {
                   <TouchableOpacity>
                     <Card>
                       <CardItem  style={styles.cardItem}>
-                      <Image style={styles.image} source={require('../images/fleets.jpeg')} />
+                      <Image style={styles.image} source={require('../images/report.jpg')} />
                         <Body style={styles.cardBody}>
                           <Text style={styles.text}>
-                             Manage Fleet
+
                           </Text>
                         </Body>
                       </CardItem>
@@ -64,7 +64,7 @@ const Home = () => {
                   <TouchableOpacity>
                     <Card>
                       <CardItem  style={styles.cardItem}>
-                      <Image style={styles.image} source={require('../images/income.png')} />
+                      <Image style={styles.image} source={require('../images/income.jpeg')} />
                         <Body style={styles.cardBody}>
                           <Text style={styles.text}>
 
@@ -77,7 +77,7 @@ const Home = () => {
                     <TouchableOpacity>
                       <Card>
                         <CardItem style={styles.cardItem} >
-                        <Image style={styles.image} source={require('../images/report.jpg')} />
+                        <Image style={styles.image} source={require('../images/fleet-image.jpg')} />
                           <Body style={styles.cardBody}>
                             <Text style={styles.text}>
 
@@ -100,8 +100,6 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'white',
-    // '#519468'
   },
 
   statusBar: {
@@ -109,10 +107,11 @@ const styles = StyleSheet.create({
   },
 
   title: {
-    color: 'white',
-    fontWeight: "900",
+    color: '#27cc69',
+    fontWeight: "bold",
     textTransform: 'uppercase',
-    fontSize: 60,
+    paddingTop: 80,
+    fontFamily: "Iowan Old Style",
   },
 
   caption: {
@@ -136,11 +135,12 @@ const styles = StyleSheet.create({
     flex: 1,
     height: 200,
     width: "100%",
-    borderRadius: 8,
+    borderRadius: 4,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: 'black',
-    margin: 3,
+    margin: 4,
+    opacity: 0.3
 
   },
 
@@ -158,17 +158,16 @@ const styles = StyleSheet.create({
     position: 'absolute',
     zIndex: 15,
     elevation: (Platform.OS === 'android') ? 50 : 0,
-    opacity: 0.8,
   },
 
   image: {
     backgroundColor: 'white',
     width: 155,
     height: 125,
+    opacity: 0.9
   },
 
   text :{
-    // textTransform: 'uppercase',
     color: '#519468',
     fontWeight: "900"
   }
