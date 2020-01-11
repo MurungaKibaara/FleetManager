@@ -47,7 +47,7 @@ class Login extends Component {
 
       <Image source={ logo }/>
 
-        <Text style={styles.logo}>FleetMgr</Text>
+        <Text style={styles.logo}>Fleetio</Text>
 
         <View style={styles.inputView}>
           <TextInput
@@ -80,7 +80,6 @@ class Login extends Component {
         <TouchableOpacity>
             <Text style={styles.forgot}>Forgot Password?</Text>
         </TouchableOpacity>
-
 
         <TouchableOpacity onPress={this.goToSignup} >
           <Text style={styles.loginText}> Dont have an account yet? Signup</Text>

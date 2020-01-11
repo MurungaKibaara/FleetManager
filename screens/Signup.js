@@ -9,7 +9,7 @@ class Signup extends Component {
 
         <View style = {styles.container}>
 
-            <Text style={styles.logo}>FleetMgr</Text>
+            <Text style={styles.logo}>Sign Up</Text>
 
             <View style={styles.inputView}>
 
