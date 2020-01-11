@@ -5,7 +5,6 @@ import Constants from 'expo-constants';
 import { Col, Row, Grid } from "react-native-easy-grid";
 import { Container, Header, Content, Card, CardItem, Body, Text } from 'native-base';
 
-
 const Home = () => {
 
   return (
@@ -16,54 +15,45 @@ const Home = () => {
               <StatusBar translucent backgroundColor={'#fff'}/>
             </View>
 
-
-
-
             <TouchableOpacity style={styles.item1}>
-
-            <Tile
-              // imageSrc={pic}
-              imageContainerStyle={styles.imageContainer}
-              activeOpacity={0.9}
-              title={'Fleetr'}
-              titleStyle={styles.title}
-              caption={'Manage your Fleet!'}
-              captionStyle={styles.caption}
-              containerStyle={styles.container}
-              featured
-            />
-
-
+                <Tile
+                  // imageSrc={pic}
+                  imageContainerStyle={styles.imageContainer}
+                  activeOpacity={0.9}
+                  title={'Fleetr'}
+                  titleStyle={styles.title}
+                  caption={'Manage your Fleet!'}
+                  captionStyle={styles.caption}
+                  containerStyle={styles.container}
+                  featured
+                />
             </TouchableOpacity>
 
             <Grid>
               <Col>
+                  <TouchableOpacity>
+                    <Card>
+                      <CardItem style={styles.cardItem}>
+                        <Body style={styles.cardBody}>
+                          <Text>
+                             Expenses
+                          </Text>
+                        </Body>
+                      </CardItem>
+                    </Card>
+                  </TouchableOpacity>
 
-                      <TouchableOpacity>
-                        <Card>
-                          <CardItem style={styles.cardItem}>
-                            <Body style={styles.cardBody}>
-                              <Text>
-                                 Expenses
-                              </Text>
-                            </Body>
-                          </CardItem>
-                        </Card>
-                      </TouchableOpacity>
-
-                      <TouchableOpacity>
-                        <Card>
-                          <CardItem  style={styles.cardItem}>
-                            <Body style={styles.cardBody}>
-                              <Text>
-                                 Collections
-                              </Text>
-                            </Body>
-                          </CardItem>
-                        </Card>
-                      </TouchableOpacity>
-
-
+                  <TouchableOpacity>
+                    <Card>
+                      <CardItem  style={styles.cardItem}>
+                        <Body style={styles.cardBody}>
+                          <Text>
+                             Collections
+                          </Text>
+                        </Body>
+                      </CardItem>
+                    </Card>
+                  </TouchableOpacity>
               </Col>
 
               <Col>
@@ -104,7 +94,8 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'black'
+    backgroundColor: 'white',
+    // '#519468'
   },
 
   statusBar: {
@@ -138,19 +129,19 @@ const styles = StyleSheet.create({
   cardItem: {
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'white',
-
+    backgroundColor: 'black',
+    opacity: 0.2,
   },
 
   cardBody: {
-    height: 150,
+    height: 125,
     alignItems: 'center',
     justifyContent: 'center',
     color: 'pink'
   },
 
   imageContainer: {
-    backgroundColor: 'gray',
+    backgroundColor: 'black',
     // position: 'sticky'
     // height: 2000,
   }
