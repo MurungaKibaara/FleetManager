@@ -36,7 +36,7 @@ const Home = () => {
                   <TouchableOpacity>
                     <Card>
                       <CardItem style={styles.cardItem}>
-                      <Image style={styles.image} source={require('../images/expenses2.jpg')} />
+                      <Image style={styles.image} source={require('../images/expenses.webp')} />
                         <Body style={styles.cardBody}>
                           <Text style={styles.text}>
 
