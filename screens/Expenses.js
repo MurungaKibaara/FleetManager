@@ -1,24 +1,45 @@
-import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import React, { Component } from 'react';
+import { FlatList } from 'react-native';
 
-export const Expenses = () => {
-  return (
-    <View style = {styles.container}>
-      <Text> Expenses page </Text>
-    </View>
-  )
-}
+// Import getNews from news.js
+import { getNews } from './Articles';
+import Article from './Articles';
 
-const styles = StyleSheet.create({
-  container: {
-    padding: 16,
-    borderRadius: 8,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  statusBar: {
-    backgroundColor: 'green',
+export default class Expenses extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { articles: [], refreshing: true };
+    this.fetchNews = this.fetchNews.bind(this);
   }
-});
 
-export default Expenses
+  componentDidMount() {
+    this.fetchNews();
+  }
+
+  fetchNews() {
+    getNews()
+      .then(articles => this.setState({ articles, refreshing: false }))
+      .catch(() => this.setState({ refreshing: false }));
+  }
+
+  handleRefresh() {
+    this.setState(
+      {
+        refreshing: true
+      },
+      () => this.fetchNews()
+    );
+  }
+
+  render() {
+    return (
+      <FlatList
+        data={this.state.articles}
+        renderItem={({ item }) => <Article article = {item} />}
+        keyExtractor={item => item.url}
+        refreshing={this.state.refreshing}
+        onRefresh={this.handleRefresh.bind(this)}
+      />
+    );
+  }
+}

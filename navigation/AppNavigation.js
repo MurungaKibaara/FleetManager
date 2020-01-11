@@ -12,16 +12,29 @@ import Reports from '../screens/Reports';
 import Expenses from '../screens/Expenses';
 
 const HomeStack = createStackNavigator({
-  Home: { screen: Home }
+  Home: {
+        screen: Home,
+        headerMode: 'none',
+        navigationOptions: {
+          headerVisible: false,
+        },
+        screenOptions:{
+          headerShown: false
+        }
+      },
     },
+
+
     {
       defaultNavigationOptions: {
         title: false,
+        header: false,
         // headerTitle:(
         // <Text>Fleetr</Text>),
           // ( <Image style={{width:300, height: 150, flex: 1}} resizeMode="contain" source={require('../images/main-logo.png')}/> ),
         headerTitleStyle: { flex: 1, textAlign: 'center' },
-        headerStyle: { backgroundColor: '#519468' },
+        headerStyle: false,
+        // { backgroundColor: '#519468' },
         headerTintColor: 'white',
         },
       }
@@ -80,8 +93,10 @@ const AppNavigator = createMaterialBottomTabNavigator(
   {
       Home: {
         screen: HomeStack,
+        headerMode: 'none',
         navigationOptions: {
          tabBarLabel:"Home",
+         headerVisible: false,
          tabBarOptions: { activeTintColor:'#519468' },
          tabBarIcon: ({ tintColor }) => (<Icon name="home" size={20} color={ tintColor } />),
          showIcon:true,
