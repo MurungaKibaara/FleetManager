@@ -5,6 +5,8 @@ import Constants from 'expo-constants';
 import { Col, Row, Grid } from "react-native-easy-grid";
 import { Container, Header, Content, Card, CardItem, Body, Text } from 'native-base';
 
+const capt = "Our fleet management solution providing helps your business right from your phone."
+
 const Home = () => {
 
   return (
@@ -17,12 +19,12 @@ const Home = () => {
 
             <TouchableOpacity style={styles.item1}>
                 <Tile
-                  // imageSrc={pic}
+                  imageSrc={require('../images/Banner.png')}
                   imageContainerStyle={styles.imageContainer}
                   activeOpacity={0.9}
                   title={'Fleetr'}
                   titleStyle={styles.title}
-                  caption={'Manage your Fleet!'}
+                  caption={capt}
                   captionStyle={styles.caption}
                   containerStyle={styles.container}
                   featured
@@ -48,7 +50,7 @@ const Home = () => {
                       <CardItem  style={styles.cardItem}>
                         <Body style={styles.cardBody}>
                           <Text>
-                             Collections
+                             Reports
                           </Text>
                         </Body>
                       </CardItem>
@@ -62,7 +64,7 @@ const Home = () => {
                       <CardItem  style={styles.cardItem}>
                         <Body style={styles.cardBody}>
                           <Text>
-                             Vehicles
+                             Collections
                           </Text>
                         </Body>
                       </CardItem>
@@ -74,7 +76,7 @@ const Home = () => {
                         <CardItem style={styles.cardItem} >
                           <Body style={styles.cardBody}>
                             <Text>
-                               Profile
+                               Fleet
                             </Text>
                           </Body>
                         </CardItem>
@@ -141,9 +143,16 @@ const styles = StyleSheet.create({
   },
 
   imageContainer: {
-    backgroundColor: 'black',
+    // backgroundColor: 'black',
     // position: 'sticky'
     // height: 2000,
+  },
+  title: {
+    color: 'white',
+    fontWeight: "400",
+  },
+  caption: {
+    color: 'white',
   }
 });
 
