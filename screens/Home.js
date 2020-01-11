@@ -1,11 +1,11 @@
 import React from 'react'
-import { View, ScrollView, StyleSheet, SafeAreaView, FlatList, StatusBar, TouchableOpacity } from 'react-native'
+import { View, Image, ScrollView, StyleSheet, SafeAreaView, FlatList, StatusBar, TouchableOpacity } from 'react-native'
 import { ListItem, Button, Icon, Tile } from 'react-native-elements'
 import Constants from 'expo-constants';
 import { Col, Row, Grid } from "react-native-easy-grid";
-import { Container, Header, Content, Card, CardItem, Body, Text } from 'native-base';
+import { Container, Header, Content, Card, CardItem, Body, Text, Thumbnail } from 'native-base';
 
-const capt = "Our fleet management solution providing helps your business right from your phone."
+const capt = "Our fleet management solution allows you to manage your business right from your phone."
 
 const Home = () => {
 
@@ -36,9 +36,10 @@ const Home = () => {
                   <TouchableOpacity>
                     <Card>
                       <CardItem style={styles.cardItem}>
+                      <Image style={styles.image} source={require('../images/expenses.webp')} />
                         <Body style={styles.cardBody}>
-                          <Text>
-                             Expenses
+                          <Text style={styles.text}>
+
                           </Text>
                         </Body>
                       </CardItem>
@@ -48,9 +49,10 @@ const Home = () => {
                   <TouchableOpacity>
                     <Card>
                       <CardItem  style={styles.cardItem}>
+                      <Image style={styles.image} source={require('../images/fleets.jpeg')} />
                         <Body style={styles.cardBody}>
-                          <Text>
-                             Reports
+                          <Text style={styles.text}>
+                             Manage Fleet
                           </Text>
                         </Body>
                       </CardItem>
@@ -62,9 +64,10 @@ const Home = () => {
                   <TouchableOpacity>
                     <Card>
                       <CardItem  style={styles.cardItem}>
+                      <Image style={styles.image} source={require('../images/income.png')} />
                         <Body style={styles.cardBody}>
-                          <Text>
-                             Collections
+                          <Text style={styles.text}>
+
                           </Text>
                         </Body>
                       </CardItem>
@@ -74,9 +77,10 @@ const Home = () => {
                     <TouchableOpacity>
                       <Card>
                         <CardItem style={styles.cardItem} >
+                        <Image style={styles.image} source={require('../images/report.jpg')} />
                           <Body style={styles.cardBody}>
-                            <Text>
-                               Fleet
+                            <Text style={styles.text}>
+
                             </Text>
                           </Body>
                         </CardItem>
@@ -102,6 +106,18 @@ const styles = StyleSheet.create({
 
   statusBar: {
     backgroundColor: 'green',
+  },
+
+  title: {
+    color: 'white',
+    fontWeight: "900",
+    textTransform: 'uppercase',
+    fontSize: 60,
+  },
+
+  caption: {
+    color: 'white',
+    textTransform: 'uppercase',
   },
 
   item :{
@@ -131,28 +147,30 @@ const styles = StyleSheet.create({
   cardItem: {
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'black',
-    opacity: 0.2,
+    backgroundColor: 'white',
+    textTransform: 'uppercase',
   },
 
   cardBody: {
     height: 125,
     alignItems: 'center',
     justifyContent: 'center',
-    color: 'pink'
+    position: 'absolute',
+    zIndex: 15,
+    elevation: (Platform.OS === 'android') ? 50 : 0,
+    opacity: 0.8,
   },
 
-  imageContainer: {
-    // backgroundColor: 'black',
-    // position: 'sticky'
-    // height: 2000,
+  image: {
+    backgroundColor: 'white',
+    width: 155,
+    height: 125,
   },
-  title: {
-    color: 'white',
-    fontWeight: "400",
-  },
-  caption: {
-    color: 'white',
+
+  text :{
+    // textTransform: 'uppercase',
+    color: '#519468',
+    fontWeight: "900"
   }
 });
 
