@@ -6,7 +6,11 @@ import Constants from 'expo-constants';
 import { Col, Row, Grid } from "react-native-easy-grid";
 import { Container, Header, Content, Card, CardItem, Body, Text, Thumbnail } from 'native-base';
 
+
+import Analytics from './Analytics'
+
 const capt = "Our fleet management solution allows you to manage your business right from your phone."
+const goToAnalytics = () => this.props.navigation.navigate('Analytics')
 
 const Home = () => {
 
@@ -102,7 +106,7 @@ const Home = () => {
                     </Card>
                     </TouchableOpacity>
 
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => {this.goToAnalytics}}>
                       <Card>
                         <CardItem style={styles.cardItem} >
 
@@ -111,7 +115,6 @@ const Home = () => {
                             name='chart-areaspline'
                             type='material-community'
                             color='green'
-                            onPress={() => console.log('hello')}
                         />
 
                           <Body style={styles.cardBody}>
