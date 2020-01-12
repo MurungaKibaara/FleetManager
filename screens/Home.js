@@ -1,6 +1,7 @@
 import React from 'react'
 import { View, Image, ScrollView, StyleSheet, SafeAreaView, FlatList, StatusBar, TouchableOpacity } from 'react-native'
 import { ListItem, Button, Icon, Tile } from 'react-native-elements'
+// import Icon from 'react-native-vector-icons/FontAwesome';
 import Constants from 'expo-constants';
 import { Col, Row, Grid } from "react-native-easy-grid";
 import { Container, Header, Content, Card, CardItem, Body, Text, Thumbnail } from 'native-base';
@@ -36,10 +37,19 @@ const Home = () => {
                   <TouchableOpacity>
                     <Card>
                       <CardItem style={styles.cardItem}>
-                      <Image style={styles.image} source={require('../images/expenses.webp')} />
+
+                      <Icon
+                          raised
+                          name='money'
+                          type='font-awesome'
+                          color='green'
+                          onPress={() => console.log('hello')}
+                      />
+
+
                         <Body style={styles.cardBody}>
                           <Text style={styles.text}>
-
+                              Expenses
                           </Text>
                         </Body>
                       </CardItem>
@@ -49,9 +59,18 @@ const Home = () => {
                   <TouchableOpacity>
                     <Card>
                       <CardItem  style={styles.cardItem}>
-                      <Image style={styles.image} source={require('../images/report.jpg')} />
+
+                        <Icon
+                            raised
+                            name='truck'
+                            type='font-awesome'
+                            color='green'
+                            onPress={() => console.log('hello')}
+                        />
+
                         <Body style={styles.cardBody}>
                           <Text style={styles.text}>
+                            Fleet
 
                           </Text>
                         </Body>
@@ -64,9 +83,18 @@ const Home = () => {
                   <TouchableOpacity>
                     <Card>
                       <CardItem  style={styles.cardItem}>
-                      <Image style={styles.image} source={require('../images/income.jpeg')} />
+
+                        <Icon
+                            raised
+                            name='bank'
+                            type='font-awesome'
+                            color='green'
+                            onPress={() => console.log('hello')}
+                        />
+
                         <Body style={styles.cardBody}>
                           <Text style={styles.text}>
+                            Revenue
 
                           </Text>
                         </Body>
@@ -77,9 +105,18 @@ const Home = () => {
                     <TouchableOpacity>
                       <Card>
                         <CardItem style={styles.cardItem} >
-                        <Image style={styles.image} source={require('../images/fleet-image.jpg')} />
+
+                        <Icon
+                            raised
+                            name='chart-areaspline'
+                            type='material-community'
+                            color='green'
+                            onPress={() => console.log('hello')}
+                        />
+
                           <Body style={styles.cardBody}>
                             <Text style={styles.text}>
+                              Analytics
 
                             </Text>
                           </Body>
@@ -93,6 +130,8 @@ const Home = () => {
     </ScrollView>
   )
 }
+
+// <Image style={styles.image} source={require('../images/fleet-image.jpg')} />
 
 const styles = StyleSheet.create({
   container: {
@@ -140,7 +179,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: 'black',
     margin: 4,
-    opacity: 0.3
+    // opacity: 0.3
 
   },
 
@@ -149,6 +188,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: 'white',
     textTransform: 'uppercase',
+    height: 145,
   },
 
   cardBody: {
@@ -168,6 +208,7 @@ const styles = StyleSheet.create({
   },
 
   text :{
+    paddingTop: 100,
     color: '#519468',
     fontWeight: "900"
   }

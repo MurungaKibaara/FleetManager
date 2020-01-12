@@ -82,7 +82,7 @@ class Login extends Component {
         </TouchableOpacity>
 
         <TouchableOpacity onPress={this.goToSignup} >
-          <Text style={styles.loginText}> Dont have an account yet? Signup</Text>
+          <Text style={styles.loginText}> Don't have an account yet? Signup</Text>
         </TouchableOpacity>
 
       </View>

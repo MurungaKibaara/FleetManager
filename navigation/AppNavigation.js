@@ -8,8 +8,8 @@ import { createMaterialBottomTabNavigator } from 'react-navigation-material-bott
 import { createAppContainer } from 'react-navigation';
 
 import Home from '../screens/Home';
-import Reports from '../screens/Reports';
-import Expenses from '../screens/Expenses';
+import Settings from '../screens/Settings';
+import Activity from '../screens/Activity';
 
 const HomeStack = createStackNavigator({
   Home: {
@@ -40,8 +40,8 @@ const HomeStack = createStackNavigator({
       }
     );
 
-const ExpensesStack = createStackNavigator({
-  Expenses: { screen: Expenses }
+const ActivityStack = createStackNavigator({
+  Activity: { screen: Activity }
     },
     {
       defaultNavigationOptions: {
@@ -72,8 +72,8 @@ const FleetStack = createStackNavigator({
       }
   );
 
-const ProfileStack = createStackNavigator({
-    Profile: { screen: Reports }
+const SettingsStack = createStackNavigator({
+    Settings: { screen: Settings }
       },
       {
         defaultNavigationOptions: {
@@ -104,12 +104,12 @@ const AppNavigator = createMaterialBottomTabNavigator(
 
       },
 
-      Expenses: {
-        screen: ExpensesStack,
+      Activity: {
+        screen: ActivityStack,
         navigationOptions: {
-         tabBarLabel:"Expenses",
+         tabBarLabel:"Activity",
          tabBarOptions: { activeTintColor:'#519468' },
-         tabBarIcon: ({ tintColor }) => ( <Icon name="money" size={20} color= { tintColor } /> ),
+         tabBarIcon: ({ tintColor }) => ( <Icon name="rocket" size={20} color= { tintColor } /> ),
          showIcon:true,
        },
      },
@@ -124,12 +124,12 @@ const AppNavigator = createMaterialBottomTabNavigator(
        },
       },
 
-      Profile: {
-        screen: ProfileStack,
+      Settings: {
+        screen: SettingsStack,
         navigationOptions: {
-         tabBarLabel:"Profile",
+         tabBarLabel:"Settings",
          tabBarOptions: { activeTintColor:'#519468' },
-         tabBarIcon: ({ tintColor }) => (<Icon name="user" size={20} color={tintColor} active= {tintColor === '#519468'}/>),
+         tabBarIcon: ({ tintColor }) => (<Icon name="cog" size={20} color={tintColor} active= {tintColor === '#519468'}/>),
          showIcon:true
        },
      },

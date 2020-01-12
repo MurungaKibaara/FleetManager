@@ -5,7 +5,7 @@ import { FlatList } from 'react-native';
 import { getNews } from './Articles';
 import Article from './Articles';
 
-export default class Expenses extends Component {
+export default class Activity extends Component {
   constructor(props) {
     super(props);
     this.state = { articles: [], refreshing: true };
