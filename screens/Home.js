@@ -13,6 +13,9 @@ const capt = "Our fleet management solution allows you to manage your business r
 class Home extends Component {
 
   goToAnalytics = () => this.props.navigation.navigate('Analytics')
+  goToRevenue = () => this.props.navigation.navigate('Revenue')
+  goToFleet = () => this.props.navigation.navigate('Fleet')
+  goToExpenses = () => this.props.navigation.navigate('Expenses')
 
   render() {
 
@@ -40,7 +43,7 @@ class Home extends Component {
 
                 <Grid>
                   <Col>
-                      <TouchableOpacity>
+                      <TouchableOpacity onPress={this.goToExpenses}>
                         <Card>
                           <CardItem style={styles.cardItem}>
 
@@ -52,7 +55,6 @@ class Home extends Component {
                               onPress={() => console.log('hello')}
                           />
 
-
                             <Body style={styles.cardBody}>
                               <Text style={styles.text}>
                                   Expenses
@@ -62,7 +64,7 @@ class Home extends Component {
                         </Card>
                       </TouchableOpacity>
 
-                      <TouchableOpacity>
+                      <TouchableOpacity onPress={this.goToFleet}>
                         <Card>
                           <CardItem  style={styles.cardItem}>
 
@@ -86,7 +88,7 @@ class Home extends Component {
                   </Col>
 
                   <Col>
-                      <TouchableOpacity>
+                      <TouchableOpacity onPress={this.goToRevenue}>
                         <Card>
                           <CardItem  style={styles.cardItem}>
 
