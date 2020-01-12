@@ -10,6 +10,7 @@ import { createAppContainer } from 'react-navigation';
 import Home from '../screens/Home';
 import Settings from '../screens/Settings';
 import Activity from '../screens/Activity';
+import Fleet from '../screens/Fleet';
 
 const HomeStack = createStackNavigator({
   Home: {
@@ -57,7 +58,7 @@ const ActivityStack = createStackNavigator({
   );
 
 const FleetStack = createStackNavigator({
-  Fleet: { screen: Home }
+  Fleet: { screen: Fleet }
     },
     {
       defaultNavigationOptions: {

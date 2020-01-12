@@ -15,9 +15,9 @@ const MainNavigation = createStackNavigator(
     Analytics: {screen: Analytics}
   },
 
-  // {
-  //   initialRouteName: 'Home',
-  // }
+  {
+    initialRouteName: 'Home',
+  }
 )
 
 export default MainNavigation;

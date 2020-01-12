@@ -8,8 +8,6 @@ import { Container, Header, Content, Card, CardItem, Body, Text, Thumbnail } fro
 
 const capt = "Our fleet management solution allows you to manage your business right from your phone."
 
-
-
 class Home extends Component {
 
   goToAnalytics = () => this.props.navigation.navigate('Analytics')
