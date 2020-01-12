@@ -1,6 +1,9 @@
 import { createSwitchNavigator,createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
+
 import AuthNavigation from './AuthNavigation'
 import AppNavigation from './AppNavigation'
+import MainNavigation from './MainNavigation'
 
 const SwitchNavigation = createSwitchNavigator(
   {
@@ -11,6 +14,18 @@ const SwitchNavigation = createSwitchNavigator(
     InitialRouteName: 'Auth'
   }
 )
-const AppContainer = createAppContainer(SwitchNavigation)
+
+const MainNavigator = createStackNavigator(
+  {
+    Switch: SwitchNavigation,
+    Main: MainNavigation,
+  },
+  {
+    InitialRouteName: 'Switch',
+    headerMode: 'none'
+  }
+)
+
+const AppContainer = createAppContainer(MainNavigator)
 
 export default AppContainer
