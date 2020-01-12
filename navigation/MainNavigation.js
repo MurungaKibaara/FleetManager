@@ -5,12 +5,16 @@ import Analytics from '../screens/Analytics';
 
 const MainNavigation = createStackNavigator(
   {
-    Home: {screen: Home},
+    Home: {
+      screen: Home,
+      headerMode: 'none'
+    },
+
     Analytics: {screen: Analytics}
   },
 
   {
-    initialRouteName: 'Home'
+    initialRouteName: 'Home',
   }
 )
 

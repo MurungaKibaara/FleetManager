@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { View, Image, ScrollView, StyleSheet, SafeAreaView, FlatList, StatusBar, TouchableOpacity } from 'react-native'
 import { ListItem, Button, Icon, Tile } from 'react-native-elements'
 // import Icon from 'react-native-vector-icons/FontAwesome';
@@ -6,132 +6,135 @@ import Constants from 'expo-constants';
 import { Col, Row, Grid } from "react-native-easy-grid";
 import { Container, Header, Content, Card, CardItem, Body, Text, Thumbnail } from 'native-base';
 
-
-import Analytics from './Analytics'
-
 const capt = "Our fleet management solution allows you to manage your business right from your phone."
-const goToAnalytics = () => this.props.navigation.navigate('Analytics')
 
-const Home = () => {
 
-  return (
-    <ScrollView>
-        <View style = {styles.container}>
 
-            <View style = {styles.statusBar}>
-              <StatusBar translucent backgroundColor={'#fff'}/>
+class Home extends Component {
+
+  goToAnalytics = () => this.props.navigation.navigate('Analytics')
+
+  render() {
+
+    return (
+        <ScrollView>
+            <View style = {styles.container}>
+
+                <View style = {styles.statusBar}>
+                  <StatusBar translucent backgroundColor={'#fff'}/>
+                </View>
+
+                <TouchableOpacity style={styles.item1}>
+                    <Tile
+                      imageSrc={require('../images/Banner.png')}
+                      imageContainerStyle={styles.imageContainer}
+                      activeOpacity={0.9}
+                      title={'fleetio.'}
+                      titleStyle={styles.title}
+                      caption={capt}
+                      captionStyle={styles.caption}
+                      containerStyle={styles.container}
+                      featured
+                    />
+                </TouchableOpacity>
+
+                <Grid>
+                  <Col>
+                      <TouchableOpacity>
+                        <Card>
+                          <CardItem style={styles.cardItem}>
+
+                          <Icon
+                              raised
+                              name='money'
+                              type='font-awesome'
+                              color='green'
+                              onPress={() => console.log('hello')}
+                          />
+
+
+                            <Body style={styles.cardBody}>
+                              <Text style={styles.text}>
+                                  Expenses
+                              </Text>
+                            </Body>
+                          </CardItem>
+                        </Card>
+                      </TouchableOpacity>
+
+                      <TouchableOpacity>
+                        <Card>
+                          <CardItem  style={styles.cardItem}>
+
+                            <Icon
+                                raised
+                                name='truck'
+                                type='font-awesome'
+                                color='green'
+                                onPress={() => console.log('hello')}
+                            />
+
+                            <Body style={styles.cardBody}>
+                              <Text style={styles.text}>
+                                Fleet
+
+                              </Text>
+                            </Body>
+                          </CardItem>
+                        </Card>
+                      </TouchableOpacity>
+                  </Col>
+
+                  <Col>
+                      <TouchableOpacity>
+                        <Card>
+                          <CardItem  style={styles.cardItem}>
+
+                            <Icon
+                                raised
+                                name='bank'
+                                type='font-awesome'
+                                color='green'
+                                onPress={() => console.log('hello')}
+                            />
+
+                            <Body style={styles.cardBody}>
+                              <Text style={styles.text}>
+                                Revenue
+
+                              </Text>
+                            </Body>
+                          </CardItem>
+                        </Card>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity onPress={this.goToAnalytics}>
+                          <Card>
+                            <CardItem style={styles.cardItem} >
+
+                            <Icon
+                                raised
+                                name='chart-areaspline'
+                                type='material-community'
+                                color='green'
+                            />
+
+                              <Body style={styles.cardBody}>
+                                <Text style={styles.text}>
+                                  Analytics
+
+                                </Text>
+                              </Body>
+                            </CardItem>
+                          </Card>
+                        </TouchableOpacity>
+                  </Col>
+              </Grid>
+
             </View>
-
-            <TouchableOpacity style={styles.item1}>
-                <Tile
-                  imageSrc={require('../images/Banner.png')}
-                  imageContainerStyle={styles.imageContainer}
-                  activeOpacity={0.9}
-                  title={'fleetio.'}
-                  titleStyle={styles.title}
-                  caption={capt}
-                  captionStyle={styles.caption}
-                  containerStyle={styles.container}
-                  featured
-                />
-            </TouchableOpacity>
-
-            <Grid>
-              <Col>
-                  <TouchableOpacity>
-                    <Card>
-                      <CardItem style={styles.cardItem}>
-
-                      <Icon
-                          raised
-                          name='money'
-                          type='font-awesome'
-                          color='green'
-                          onPress={() => console.log('hello')}
-                      />
-
-
-                        <Body style={styles.cardBody}>
-                          <Text style={styles.text}>
-                              Expenses
-                          </Text>
-                        </Body>
-                      </CardItem>
-                    </Card>
-                  </TouchableOpacity>
-
-                  <TouchableOpacity>
-                    <Card>
-                      <CardItem  style={styles.cardItem}>
-
-                        <Icon
-                            raised
-                            name='truck'
-                            type='font-awesome'
-                            color='green'
-                            onPress={() => console.log('hello')}
-                        />
-
-                        <Body style={styles.cardBody}>
-                          <Text style={styles.text}>
-                            Fleet
-
-                          </Text>
-                        </Body>
-                      </CardItem>
-                    </Card>
-                  </TouchableOpacity>
-              </Col>
-
-              <Col>
-                  <TouchableOpacity>
-                    <Card>
-                      <CardItem  style={styles.cardItem}>
-
-                        <Icon
-                            raised
-                            name='bank'
-                            type='font-awesome'
-                            color='green'
-                            onPress={() => console.log('hello')}
-                        />
-
-                        <Body style={styles.cardBody}>
-                          <Text style={styles.text}>
-                            Revenue
-
-                          </Text>
-                        </Body>
-                      </CardItem>
-                    </Card>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity onPress={() => {this.goToAnalytics}}>
-                      <Card>
-                        <CardItem style={styles.cardItem} >
-
-                        <Icon
-                            raised
-                            name='chart-areaspline'
-                            type='material-community'
-                            color='green'
-                        />
-
-                          <Body style={styles.cardBody}>
-                            <Text style={styles.text}>
-                              Analytics
-
-                            </Text>
-                          </Body>
-                        </CardItem>
-                      </Card>
-                    </TouchableOpacity>
-              </Col>
-          </Grid>
-
-        </View>
-    </ScrollView>
-  )
+        </ScrollView>
+      )
+  }
 }
 
 // <Image style={styles.image} source={require('../images/fleet-image.jpg')} />
