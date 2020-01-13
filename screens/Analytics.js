@@ -19,7 +19,45 @@ class Analytics extends Component
 
     const randomColor = () => ('#' + (Math.random() * 0xFFFFFF << 0).toString(16) + '000000').slice(0, 7)
 
-    const pieData = data2
+    const pieData2 = [
+      {
+        name: 'Seoul',
+        population: 21500000,
+        color: 'rgba(131, 167, 234, 1)',
+        legendFontColor: '#7F7F7F',
+        legendFontSize: 15,
+      },
+      {
+        name: 'Toronto',
+        population: 2800000,
+        color: '#F00',
+        legendFontColor: '#7F7F7F',
+        legendFontSize: 15,
+      },
+      {
+        name: 'Beijing',
+        population: 527612,
+        color: 'red',
+        legendFontColor: '#7F7F7F',
+        legendFontSize: 15,
+      },
+      {
+        name: 'New York',
+        population: 8538000,
+        color: '#ffffff',
+        legendFontColor: '#7F7F7F',
+        legendFontSize: 15,
+      },
+      {
+        name: 'Moscow',
+        population: 11920000,
+        color: 'rgb(0, 0, 255)',
+        legendFontColor: '#7F7F7F',
+        legendFontSize: 15,
+      },
+    ];
+
+    const pieData = pieData2
       .filter(value => value > 0)
       .map((value, index) => ({
         value,
@@ -77,10 +115,7 @@ class Analytics extends Component
                   <Grid>
                       <Col>
                       <Text style={styles.text} > Expenses Analysis </Text>
-                        <PieChart
-                          style={ { height: 180, paddingTop:10 }}
-                          data={ pieData }
-                        />
+
                       </Col>
                   </Grid>
 
