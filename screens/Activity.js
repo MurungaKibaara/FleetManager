@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { FlatList } from 'react-native';
+import { SearchBar } from 'react-native-elements';
 
 // Import getNews from news.js
 import { getNews } from './Articles';
