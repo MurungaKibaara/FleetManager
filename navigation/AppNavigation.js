@@ -51,7 +51,7 @@ const ActivityStack = createStackNavigator({
         // (<Text>Fleetr</Text>),
         // ( <Image style={{width:300, height: 150, flex: 1}} resizeMode="contain" source={require('../images/main-logo.png')}/> ),
         headerTitleStyle: { flex: 1, textAlign: 'center' },
-        headerStyle: { backgroundColor: '#519468' },
+        headerStyle: { backgroundColor: '#8a0813' },
         headerTintColor: 'white',
         },
       }
@@ -67,7 +67,7 @@ const FleetStack = createStackNavigator({
           // <Text>Fleetr</Text>),
           // <Image style={{width:300, height: 150, flex: 1}} resizeMode="contain" source={require('../images/main-logo.png')} />),
         headerTitleStyle: { flex: 1, textAlign: 'center', fontSize:30 },
-        headerStyle: { backgroundColor: '#519468' },
+        headerStyle: { backgroundColor: '#8a0813' },
         headerTintColor: '#fff',
         },
       }
@@ -83,7 +83,7 @@ const SettingsStack = createStackNavigator({
           //   <Text>Fleetr</Text>),
             // <Image style={{width:300, height: 150, flex: 1}} resizeMode="contain" source={require('../images/main-logo.png')}/>),
           headerTitleStyle: { flex: 1, textAlign: 'center' },
-          headerStyle: { backgroundColor: '#519468' },
+          headerStyle: { backgroundColor: '#8a0813' },
           headerTintColor: 'white',
         },
       }
@@ -98,7 +98,7 @@ const AppNavigator = createMaterialBottomTabNavigator(
         navigationOptions: {
          tabBarLabel:"Home",
          headerVisible: false,
-         tabBarOptions: { activeTintColor:'#519468' },
+         tabBarOptions: { activeTintColor:'#8a0813' },
          tabBarIcon: ({ tintColor }) => (<Icon name="home" size={20} color={ tintColor } />),
          showIcon:true,
        },
@@ -109,7 +109,7 @@ const AppNavigator = createMaterialBottomTabNavigator(
         screen: ActivityStack,
         navigationOptions: {
          tabBarLabel:"Activity",
-         tabBarOptions: { activeTintColor:'#519468' },
+         tabBarOptions: { activeTintColor:'#8a0813' },
          tabBarIcon: ({ tintColor }) => ( <Icon name="rocket" size={20} color= { tintColor } /> ),
          showIcon:true,
        },
@@ -119,7 +119,7 @@ const AppNavigator = createMaterialBottomTabNavigator(
         screen: FleetStack,
         navigationOptions: {
          tabBarLabel:"Fleet",
-          tabBarOptions: { activeTintColor:'#519468' },
+          tabBarOptions: { activeTintColor:'#8a0813' },
          tabBarIcon: ({ tintColor }) => (<Icon name="car" size={20} color= { tintColor } /> ),
          showIcon:true
        },
@@ -129,8 +129,8 @@ const AppNavigator = createMaterialBottomTabNavigator(
         screen: SettingsStack,
         navigationOptions: {
          tabBarLabel:"Settings",
-         tabBarOptions: { activeTintColor:'#519468' },
-         tabBarIcon: ({ tintColor }) => (<Icon name="cog" size={20} color={tintColor} active= {tintColor === '#519468'}/>),
+         tabBarOptions: { activeTintColor:'#8a0813' },
+         tabBarIcon: ({ tintColor }) => (<Icon name="cog" size={20} color={tintColor} active= {tintColor === '#8a0813'}/>),
          showIcon:true
        },
      },

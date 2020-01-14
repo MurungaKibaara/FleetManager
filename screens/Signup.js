@@ -71,7 +71,7 @@ class Signup extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#519468',
+    backgroundColor: 'black',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
   },
     loginBtn:{
       width:"80%",
-      backgroundColor:"green",
+      backgroundColor:"#8a0813",
       borderRadius:25,
       height:50,
       alignItems:"center",

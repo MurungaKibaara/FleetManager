@@ -1,13 +1,36 @@
-import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
+import { SearchBar } from 'react-native-elements';
 
-const Expenses = () => {
-  return (
-    <View style = {styles.container}>
-      <Text> Expenses </Text>
-    </View>
-  )
-}
+// export default Expenses;
+
+export default class Expenses extends React.Component {
+  state = {
+    search: '',
+  };
+
+  updateSearch = search => {
+    this.setState({ search });
+  };
+
+  render() {
+    const { search } = this.state;
+
+    return (
+      <>
+      <SearchBar
+        style={styles.search}
+        placeholder="Type Here..."
+        onChangeText={this.updateSearch}
+        value={search}
+      />
+
+      <Text> Expenses Page </Text>
+      </>
+
+        )
+      }
+    }
 
 const styles = StyleSheet.create({
   container: {
@@ -16,9 +39,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+
   statusBar: {
     backgroundColor: 'green',
-  }
-});
+  },
 
-export default Expenses;
+  search: {
+    backgroundColor: 'white',
+    color:'black',
+  }
+    });

@@ -49,7 +49,7 @@ class Home extends Component {
                               raised
                               name='money'
                               type='font-awesome'
-                              color='green'
+                              color='black'
                               onPress={() => console.log('hello')}
                           />
 
@@ -70,7 +70,7 @@ class Home extends Component {
                                 raised
                                 name='truck'
                                 type='font-awesome'
-                                color='green'
+                                color='black'
                                 onPress={() => console.log('hello')}
                             />
 
@@ -94,7 +94,7 @@ class Home extends Component {
                                 raised
                                 name='bank'
                                 type='font-awesome'
-                                color='green'
+                                color='black'
                                 onPress={() => console.log('hello')}
                             />
 
@@ -116,7 +116,7 @@ class Home extends Component {
                                 raised
                                 name='chart-areaspline'
                                 type='material-community'
-                                color='green'
+                                color='black'
                             />
 
                               <Body style={styles.cardBody}>
@@ -152,7 +152,7 @@ const styles = StyleSheet.create({
   },
 
   title: {
-    color: '#27cc69',
+    color: 'white',
     fontWeight: "bold",
     textTransform: 'uppercase',
     paddingTop: 80,
@@ -215,7 +215,8 @@ const styles = StyleSheet.create({
 
   text :{
     paddingTop: 100,
-    color: '#519468',
+    color: 'black',
+    // '#519468',
     fontWeight: "900"
   }
 });

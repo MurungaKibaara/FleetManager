@@ -114,11 +114,9 @@ class Analytics extends Component
 
                   <Grid>
                       <Col>
-                      <Text style={styles.text} > Expenses Analysis </Text>
-
+                        <Text style={styles.text} > Expenses Analysis </Text>
                       </Col>
                   </Grid>
-
             </View>
       </ScrollView>
     );
