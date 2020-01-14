@@ -11,7 +11,7 @@ const url = "https://newsapi.org/v2/top-headlines?country=us&apiKey=5492e85c83de
 
 export const getNews = async() => {
   let result = await fetch(url).then(response => response.json());
-  console.log(result)
+  // console.log(result)
   return result.articles;
 }
 

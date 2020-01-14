@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FlatList } from 'react-native';
+import { FlatList, View, Text, StyleSheet  } from 'react-native';
 import { SearchBar } from 'react-native-elements';
 
 // Import getNews from news.js
@@ -9,7 +9,7 @@ import Article from './Articles';
 export default class Activity extends Component {
   constructor(props) {
     super(props);
-    this.state = { articles: [], refreshing: true };
+    this.state = { articles: [], refreshing: true, search: '' };
     this.fetchNews = this.fetchNews.bind(this);
   }
 
@@ -23,6 +23,11 @@ export default class Activity extends Component {
       .catch(() => this.setState({ refreshing: false }));
   }
 
+  updateSearch = search => {
+    this.setState({ search });
+    console.log(this.search)
+  };
+
   handleRefresh() {
     this.setState(
       {
@@ -33,7 +38,19 @@ export default class Activity extends Component {
   }
 
   render() {
+
+    const { search } = this.state;
+
     return (
+      <>
+
+      <SearchBar
+        style={styles.search}
+        placeholder="Type Here..."
+        onChangeText={this.updateSearch}
+        value={search}
+      />
+
       <FlatList
         data={this.state.articles}
         renderItem={({ item }) => <Article article = {item} />}
@@ -41,6 +58,15 @@ export default class Activity extends Component {
         refreshing={this.state.refreshing}
         onRefresh={this.handleRefresh.bind(this)}
       />
+
+      </>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  search: {
+    backgroundColor: 'white',
+    color:'black',
+  }
+});
