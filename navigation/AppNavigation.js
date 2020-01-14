@@ -25,7 +25,6 @@ const HomeStack = createStackNavigator({
       },
     },
 
-
     {
       defaultNavigationOptions: {
         title: false,
@@ -99,18 +98,17 @@ const AppNavigator = createMaterialBottomTabNavigator(
          tabBarLabel:"Home",
          headerVisible: false,
          tabBarOptions: { activeTintColor:'#8a0813' },
-         tabBarIcon: ({ tintColor }) => (<Icon name="home" size={20} color={ tintColor } />),
+         tabBarIcon: ({ tintColor }) => (<Icon name="home" size={20} color={ tintColor } active= {tintColor === '#8a0813'}/>),
          showIcon:true,
        },
-
-      },
+    },
 
       Activity: {
         screen: ActivityStack,
         navigationOptions: {
          tabBarLabel:"Activity",
          tabBarOptions: { activeTintColor:'#8a0813' },
-         tabBarIcon: ({ tintColor }) => ( <Icon name="rocket" size={20} color= { tintColor } /> ),
+         tabBarIcon: ({ tintColor }) => ( <Icon name="rocket" size={20} color= { tintColor } active= {tintColor === '#8a0813'} /> ),
          showIcon:true,
        },
      },
@@ -120,7 +118,7 @@ const AppNavigator = createMaterialBottomTabNavigator(
         navigationOptions: {
          tabBarLabel:"Fleet",
           tabBarOptions: { activeTintColor:'#8a0813' },
-         tabBarIcon: ({ tintColor }) => (<Icon name="car" size={20} color= { tintColor } /> ),
+         tabBarIcon: ({ tintColor }) => (<Icon name="car" size={20} color= { tintColor } active= {tintColor === '#8a0813'}/> ),
          showIcon:true
        },
       },
@@ -138,7 +136,7 @@ const AppNavigator = createMaterialBottomTabNavigator(
 
     {
       initialRouteName: "Home",
-      activeColor: "#519468",
+      activeColor: "#8a0813",
       inactiveColor: 'gray',
       shifting:false,
       labeled: true,
