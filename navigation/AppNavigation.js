@@ -28,13 +28,9 @@ const HomeStack = createStackNavigator({
     {
       defaultNavigationOptions: {
         title: false,
-        header: false,
-        // headerTitle:(
-        // <Text>Fleetr</Text>),
-          // ( <Image style={{width:300, height: 150, flex: 1}} resizeMode="contain" source={require('../images/main-logo.png')}/> ),
+        header:()=> (false),
         headerTitleStyle: { flex: 1, textAlign: 'center' },
         headerStyle: false,
-        // { backgroundColor: '#519468' },
         headerTintColor: 'white',
         },
       }
@@ -45,11 +41,8 @@ const ActivityStack = createStackNavigator({
     },
     {
       defaultNavigationOptions: {
-        title: false,
-        // headerTitle:(),
-        // (<Text>Fleetr</Text>),
-        // ( <Image style={{width:300, height: 150, flex: 1}} resizeMode="contain" source={require('../images/main-logo.png')}/> ),
-        headerTitleStyle: { flex: 1, textAlign: 'center' },
+        headerTitle:()=> (<Text style={{color:'white', fontSize:20}}>Activity</Text>),
+        headerTitleStyle: { flex: 1, textAlign: 'center', color: 'white', fontSize:24 },
         headerStyle: { backgroundColor: '#8a0813' },
         headerTintColor: 'white',
         },
@@ -61,10 +54,7 @@ const FleetStack = createStackNavigator({
     },
     {
       defaultNavigationOptions: {
-        title: false,
-        // headerTitle: (
-          // <Text>Fleetr</Text>),
-          // <Image style={{width:300, height: 150, flex: 1}} resizeMode="contain" source={require('../images/main-logo.png')} />),
+        headerTitle:()=> (<Text style={{color:'white', fontSize:20}}>Fleet</Text>),
         headerTitleStyle: { flex: 1, textAlign: 'center', fontSize:30 },
         headerStyle: { backgroundColor: '#8a0813' },
         headerTintColor: '#fff',
@@ -77,10 +67,7 @@ const SettingsStack = createStackNavigator({
       },
       {
         defaultNavigationOptions: {
-          title: false,
-          // headerTitle: (
-          //   <Text>Fleetr</Text>),
-            // <Image style={{width:300, height: 150, flex: 1}} resizeMode="contain" source={require('../images/main-logo.png')}/>),
+          headerTitle:()=> (<Text style={{color:'white', fontSize:20}}>Settings</Text>),
           headerTitleStyle: { flex: 1, textAlign: 'center' },
           headerStyle: { backgroundColor: '#8a0813' },
           headerTintColor: 'white',

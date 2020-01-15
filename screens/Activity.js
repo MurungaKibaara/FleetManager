@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FlatList, View, Text, StyleSheet  } from 'react-native';
+import { FlatList, View, Text, StyleSheet, ActivityIndicator } from 'react-native';
 import { SearchBar } from 'react-native-elements';
 
 // Import getNews from news.js
@@ -9,8 +9,15 @@ import Article from './Articles';
 export default class Activity extends Component {
   constructor(props) {
     super(props);
-    this.state = { articles: [], refreshing: true, search: '' };
-    this.fetchNews = this.fetchNews.bind(this);
+      this.state = {
+        articles: [],
+        refreshing: true,
+        search: '',
+        isLoading: true,
+        arrayholder:[]
+      };
+
+      this.fetchNews = this.fetchNews.bind(this);
   }
 
   componentDidMount() {
@@ -23,10 +30,33 @@ export default class Activity extends Component {
       .catch(() => this.setState({ refreshing: false }));
   }
 
-  updateSearch = search => {
+  updateSearch() {
     this.setState({ search });
-    console.log(this.search)
+    console.log(search)
   };
+
+  search = text => {
+    console.log(text);
+  };
+  clear = () => {
+    this.search.clear();
+  };
+
+  SearchFilterFunction(text) {
+    //passing the inserted text in textinput
+    const newData = this.articles.filter(function(item) {
+      //applying filter for the inserted text in search bar
+      const itemData = item.title ? item.title.toUpperCase() : ''.toUpperCase();
+      const textData = text.toUpperCase();
+      return itemData.indexOf(textData) > -1;
+    });
+    this.setState({
+      //setting the filtered newData on datasource
+      //After setting the data it will automatically re-render the view
+      dataSource: newData,
+      search:text,
+    });
+  }
 
   handleRefresh() {
     this.setState(
@@ -34,30 +64,55 @@ export default class Activity extends Component {
         refreshing: true
       },
       () => this.fetchNews()
+  );
+}
+
+ListViewItemSeparator = () => {
+  //Item sparator view
+  return (
+    <View
+      style={{
+        height: 0.3,
+        width: '90%',
+        backgroundColor: '#080808',
+      }}
+    />
+  );
+}
+
+render() {
+  if (this.state.isLoading) {
+    //Loading View while data is loading
+    return (
+      <View style={{ flex: 1, paddingTop: 20 }}>
+        <ActivityIndicator />
+      </View>
     );
   }
 
-  render() {
-
-    const { search } = this.state;
+    // const { search } = this.state;
 
     return (
       <>
 
-      <SearchBar
-        style={styles.search}
-        placeholder="Type Here..."
-        onChangeText={this.updateSearch}
-        value={search}
-      />
+        <SearchBar
+          round
+          searchIcon={{ size: 24 }}
+          onChangeText={text => this.SearchFilterFunction(text)}
+          onClear={text => this.SearchFilterFunction('')}
+          placeholder="Type Here..."
+          value={this.state.search}
+        />
 
-      <FlatList
-        data={this.state.articles}
-        renderItem={({ item }) => <Article article = {item} />}
-        keyExtractor={item => item.url}
-        refreshing={this.state.refreshing}
-        onRefresh={this.handleRefresh.bind(this)}
-      />
+        <FlatList
+          data={this.state.dataSource}
+          ItemSeparatorComponent={this.ListViewItemSeparator}
+          renderItem={({ item }) => <Article article = {item} />}
+          keyExtractor={item => item.url}
+          refreshing={this.state.refreshing}
+          onRefresh={this.handleRefresh.bind(this)}
+          enableEmptySections={true}
+        />
 
       </>
     );
@@ -65,8 +120,13 @@ export default class Activity extends Component {
 }
 
 const styles = StyleSheet.create({
-  search: {
-    backgroundColor: 'white',
-    color:'black',
-  }
+  viewStyle: {
+    justifyContent: 'center',
+    flex: 1,
+    backgroundColor:'white',
+    marginTop: Platform.OS == 'ios'? 30 : 0
+  },
+  textStyle: {
+    padding: 10,
+  },
 });
