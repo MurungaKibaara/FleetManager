@@ -50,8 +50,6 @@ clear = () => {
   this.search.clear();
 };
 
-
-
 SearchFilterFunction(text) {
   //passing the inserted text in textinput
 
@@ -93,6 +91,7 @@ render() {
         round
         searchIcon={{ size: 20 }}
         onChangeText={ text => this.SearchFilterFunction(text) }
+        clearButtonMode='while-editing'
         onClear={text => this.SearchFilterFunction('')}
         placeholder="Type Here..."
         value={this.state.search}
