@@ -14,7 +14,6 @@ export default class Activity extends Component {
         refreshing: true,
         search: '',
         isLoading: true,
-        arrayholder:[]
       };
 
       this.fetchNews = this.fetchNews.bind(this);
@@ -26,36 +25,8 @@ export default class Activity extends Component {
 
   fetchNews() {
     getNews()
-      .then(articles => this.setState({ articles, refreshing: false }))
+      .then(articles => this.setState({ articles, refreshing: false, isLoading:false }))
       .catch(() => this.setState({ refreshing: false }));
-  }
-
-  updateSearch() {
-    this.setState({ search });
-    console.log(search)
-  };
-
-  search = text => {
-    console.log(text);
-  };
-  clear = () => {
-    this.search.clear();
-  };
-
-  SearchFilterFunction(text) {
-    //passing the inserted text in textinput
-    const newData = this.articles.filter(function(item) {
-      //applying filter for the inserted text in search bar
-      const itemData = item.title ? item.title.toUpperCase() : ''.toUpperCase();
-      const textData = text.toUpperCase();
-      return itemData.indexOf(textData) > -1;
-    });
-    this.setState({
-      //setting the filtered newData on datasource
-      //After setting the data it will automatically re-render the view
-      dataSource: newData,
-      search:text,
-    });
   }
 
   handleRefresh() {
@@ -67,55 +38,77 @@ export default class Activity extends Component {
   );
 }
 
+updateSearch = search => {
+    this.setState({ search });
+  };
+
+search = text => {
+  console.log(text);
+};
+
+clear = () => {
+  this.search.clear();
+};
+
+
+
+SearchFilterFunction(text) {
+  //passing the inserted text in textinput
+
+  const newData = this.state.articles.filter(function(item) {
+    //applying filter for the inserted text in search bar
+    const itemData = item.title ? item.title.toUpperCase() : ''.toUpperCase();
+    const textData = text.toUpperCase();
+    return itemData.indexOf(textData) > -1;
+  });
+
+  this.setState({
+    search:text,
+    articles: newData,
+  });
+}
+
+
 ListViewItemSeparator = () => {
   //Item sparator view
   return (
-    <View
-      style={{
-        height: 0.3,
-        width: '90%',
-        backgroundColor: '#080808',
-      }}
-    />
-  );
-}
+    <View style={{ height: 0.3, width: '90%', backgroundColor: '#080808',}} />
+    );
+  }
+
 
 render() {
   if (this.state.isLoading) {
     //Loading View while data is loading
     return (
-      <View style={{ flex: 1, paddingTop: 20 }}>
-        <ActivityIndicator />
-      </View>
-    );
-  }
+        <View style={{ flex: 1, paddingTop: 20 }}>
+          <ActivityIndicator />
+        </View>
+      );
+    }
 
-    // const { search } = this.state;
+  return (
+    <React.Fragment>
+      <SearchBar
+        round
+        searchIcon={{ size: 20 }}
+        onChangeText={ text => this.SearchFilterFunction(text) }
+        onClear={text => this.SearchFilterFunction('')}
+        placeholder="Type Here..."
+        value={this.state.search}
+      />
 
-    return (
-      <>
+      <FlatList
+        data={this.state.articles}
+        ItemSeparatorComponent={this.ListViewItemSeparator}
+        renderItem = {({ item }) => <Article article = {item} />}
+        keyExtractor={item => item.url}
+        refreshing={this.state.refreshing}
+        onRefresh={this.handleRefresh.bind(this)}
+      />
 
-        <SearchBar
-          round
-          searchIcon={{ size: 24 }}
-          onChangeText={text => this.SearchFilterFunction(text)}
-          onClear={text => this.SearchFilterFunction('')}
-          placeholder="Type Here..."
-          value={this.state.search}
-        />
-
-        <FlatList
-          data={this.state.dataSource}
-          ItemSeparatorComponent={this.ListViewItemSeparator}
-          renderItem={({ item }) => <Article article = {item} />}
-          keyExtractor={item => item.url}
-          refreshing={this.state.refreshing}
-          onRefresh={this.handleRefresh.bind(this)}
-          enableEmptySections={true}
-        />
-
-      </>
-    );
+    </React.Fragment>
+    )
   }
 }
 

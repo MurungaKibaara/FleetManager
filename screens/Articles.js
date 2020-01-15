@@ -67,7 +67,6 @@ class Articles extends Component {
                 </Card>
               </>
             </TouchableNativeFeedback>
-          // </TouchableOpacity>
         );
       }
     }
