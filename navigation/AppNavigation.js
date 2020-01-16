@@ -134,20 +134,4 @@ const AppNavigator = createMaterialBottomTabNavigator(
     },
 )
 
-
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: "#fff",
-//     alignItems: "center",
-//     justifyContent: "center"
-//   },
-//
-//   imageLogo: {
-//     width: 400,
-//     height: 300
-//   }
-// });
-
 export default createAppContainer(AppNavigator);
