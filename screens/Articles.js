@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent  } from 'react'
 import { View, StyleSheet, TouchableOpacity,Linking, TouchableNativeFeedback } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Text, Button, Card, Divider } from 'react-native-elements';
@@ -15,7 +15,7 @@ export const getNews = async() => {
   return result.articles;
 }
 
-class Articles extends Component {
+class Articles extends PureComponent {
 
   constructor(props){
     super(props)

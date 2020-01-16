@@ -3,6 +3,8 @@ import { View, Text, StyleSheet, TextInput, TouchableOpacity, SafeAreaView, Scro
 
 class Signup extends Component {
 
+  gotoLogin= () => this.props.navigation.navigate('Login')
+
   state = {
     name: '',
     email: '',
@@ -12,6 +14,7 @@ class Signup extends Component {
   handleNameChange = email => {
     this.setState({ email })
   }
+
   handleEmailChange = name => {
     this.setState({ name })
   }
@@ -20,7 +23,48 @@ class Signup extends Component {
     this.setState({ password })
   }
 
-  gotoLogin= () => this.props.navigation.navigate('Login')
+
+  onSignup = async () => {
+    const { name, email, password } = this.state
+    try {
+      if (email.length > 0 && password.length > 0 && name.length > 0) {
+
+        async function signUpNewUser() {
+
+                const url = 'https://facebook.github.io/react-native/movies.json'
+
+                const options = {
+                    method: 'POST',
+                    headers: {
+                      'Accept': 'application/json',
+                      'Content-Type': 'application/json',
+                      // 'Authorization': 'JWT '+<token> // There will be different type of authorization like Bearer, JWT, Basic
+                    },
+                    body: JSON.stringify({
+                      name: this.state.name,
+                      email: this.state.email,
+                      password: this.state.password
+                    }),
+                  }
+
+                try {
+
+                  let response = await fetch(url, options);
+                  let responseJson = await response.json();
+                  return responseJson.status;
+
+                } catch (error) {
+                  console.error(error);
+                }
+            }
+          }
+    }
+
+    catch (error) {
+      alert(error)
+    }
+}
+
 
   render() {
       return (

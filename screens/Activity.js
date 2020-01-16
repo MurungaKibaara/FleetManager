@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { FlatList, View, Text, StyleSheet, ActivityIndicator } from 'react-native';
 import { SearchBar } from 'react-native-elements';
 
@@ -6,7 +6,7 @@ import { SearchBar } from 'react-native-elements';
 import { getNews } from './Articles';
 import Article from './Articles';
 
-export default class Activity extends Component {
+export default class Activity extends PureComponent {
   constructor(props) {
     super(props);
       this.state = {
