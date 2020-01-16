@@ -81,13 +81,6 @@ class Articles extends Component {
      }
     }
 
-// <View style={{ zIndex: 200 }}>
-//   <TouchableOpacity style={styles.addExpensesButton} >
-//        <Icon style={{ zIndex: 200 }} name="plus"  size={30} color="#519468" ></Icon>
-//   </TouchableOpacity>
-// </View>
-
-
 const styles = StyleSheet.create({
   container: {
     padding: 16,
