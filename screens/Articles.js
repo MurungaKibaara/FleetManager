@@ -28,6 +28,7 @@ class Articles extends Component {
   _onNavigationStateChange = navState => {
     this.setState({uri: url})
   };
+
  renderWebView(){
    const { title, description, publishedAt, source, urlToImage, url } = this.props.article;
    const { noteStyle, featuredTitleStyle } = styles;
