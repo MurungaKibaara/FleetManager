@@ -15,7 +15,7 @@
     "expo-font": "~8.0.0",
     "expo-secure-store": "~8.0.0",
     "lottie-react-native": "~2.6.1",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "nachos-ui": "^0.2.0-beta.1",
     "native-base": "^2.13.8",
     "patch-package": "^6.2.0",
